@@ -1,27 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+var today = new Date();
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
+    const itsWednesday = today.getDay() === 3
+    if (itsWednesday) {
+
+      return (
+        <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
+          <p>Oui !</p>
+          <p className="App-logo">
+            🍻
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
       </div>
     );
+  } else {
+    return (
+      <div className="App">
+      <header className="App-header">
+        <p>Non !</p>
+        <p className="App-logo">
+          😔
+        </p>
+      </header>
+    </div>
+  );
+  }
   }
 }
 
